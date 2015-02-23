@@ -654,7 +654,7 @@ $CONFIGURE_OPTIONS"
 --- 5.2.17/Makefile 2012-11-26 19:11:53.000000000 +0900
 ***************
 *** 105 ****
-! INSTALL_IT = \$(mkinstalldirs) '\$(INSTALL_ROOT)/usr/libexec/apache2' && \$(mkinstalldirs) '\$(INSTALL_ROOT)/private/etc/apache2' && /usr/sbin/apxs -S LIBEXECDIR='\$(INSTALL_ROOT)/usr/libexec/apache2' -S SYSCONFDIR='\$(INSTALL_ROOT)/private/etc/apache2' -i -a -n php5 libs/libphp5.so
+! INSTALL_IT = $(mkinstalldirs) '$(INSTALL_ROOT)/usr/lib/apache2/modules' && $(mkinstalldirs) '$(INSTALL_ROOT)/etc/apache2' && /usr/bin/apxs2 -S LIBEXECDIR='$(INSTALL_ROOT)/usr/lib/apache2/modules' -S SYSCONFDIR='$(INSTALL_ROOT)/etc/apache2' -i -a -n php5 libphp5.la
 --- 105 ----
 ! INSTALL_IT = \$(mkinstalldirs) '$PREFIX/libexec/apache2' && \$(mkinstalldirs) '\$(INSTALL_ROOT)/private/etc/apache2' && /usr/sbin/apxs -S LIBEXECDIR='$PREFIX/libexec/apache2' -S SYSCONFDIR='\$(INSTALL_ROOT)/private/etc/apache2' -i -a -n php5 libs/libphp5.so
 EOF
